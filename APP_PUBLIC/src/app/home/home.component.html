@@ -1,0 +1,61 @@
+<!-- carousel -->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://wallpaperaccess.com/full/226908.jpg" class="d-block w-100" alt="..." style="width:100%; height:600px;">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmlrZXxlbnwwfHwwfHw%3D&w=1000&q=80" class="d-block w-100" alt="..." style="width:100%; height:600px;"> 
+      </div>
+      <div class="carousel-item">
+        <img src="https://wallpapers-hub.art/wallpaper-images/4450.jpg" class="d-block w-100" alt="..." style="width:100%; height:600px;">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- top selling books -->
+<div class="page-header" id="banner">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 text-center " style="margin: 2% 0 2% 0;font-style: italic;color: #f79522;">
+            <h2>Top Selling Bikes</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" style="margin-top:10px;">
+      <div class="col-md-6" style="margin-bottom: 3%;" *ngFor="let bike of bikes; let i = index">
+        <div class="card text-center" style='width:80%; margin-left: 10%;'>
+          <img src="{{bike.image}}" class="card-img-top" alt="..."  style='width:100%; height:400px;'>
+          <div class="card-body">
+              <h4 class="card-title text-center">{{bike.name}} - {{bike.launchYear}}</h4>
+              <h5 class="card-text text-center"> by {{bike.brand}}</h5>
+                <span *ngFor="let item of [].constructor(bike.rating)" class="fa fa-star" style='color: orange;font-size: x-large;'></span>
+                <span *ngFor="let item of [].constructor(5 - bike.rating)" class="fa fa-star-o" style='color: orange;font-size: x-large;'></span>
+            </div>
+            <div class="text-center" style="margin-bottom: 6%;">
+                <a href="/bike/{{bike._id}}">
+                    <button class="btn btn-primary">View Details</button>
+                </a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="embed-responsive embed-responsive-21by9" >
+    <h2 class="text-center" style="margin: 0 0 3% 0;font-style: italic;color: #f79522;">How it Works</h2>
+    <div style="margin: 0 0 3% 0;">
+      <iframe  width="100%" height="415" class="embed-responsive-item" src="https://www.youtube.com/embed/sCqhDsLlLFQ?start=84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+    </div>
+</div>
